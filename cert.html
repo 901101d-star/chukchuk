@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공동인증서 등록 — 척척노트</title>
+<style>
+  :root { --bg:#f2f4f6; --card:#fff; --ink:#191f28; --sub:#6b7684; --blue:#1b64da; --red:#f04452; --line:#e5e8eb; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family: Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+  main { max-width: 520px; margin: 56px auto; padding: 0 20px; }
+  .card { background:var(--card); border-radius:22px; padding:32px 28px; }
+  h1 { font-size:24px; letter-spacing:-0.6px; margin:0 0 8px; }
+  p { color:var(--sub); line-height:1.6; margin:0 0 20px; font-size:15px; }
+  label { display:block; font-weight:700; font-size:14px; margin-bottom:8px; }
+  input { width:100%; font-size:26px; letter-spacing:4px; text-align:center; padding:14px; border:1.5px solid var(--line); border-radius:14px; text-transform:uppercase; font-weight:800; }
+  input:focus { outline:none; border-color:var(--blue); }
+  button { margin-top:16px; width:100%; height:54px; border:0; border-radius:15px; background:var(--blue); color:#fff; font-size:16px; font-weight:800; cursor:pointer; }
+  .msg { margin-top:16px; padding:14px 16px; border-radius:14px; background:#fdeced; color:var(--red); font-weight:700; font-size:14px; display:none; }
+  ol { color:var(--sub); font-size:14px; line-height:1.8; padding-left:20px; margin:24px 0 0; }
+  footer { text-align:center; color:var(--sub); font-size:12px; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <h1>공동인증서 등록</h1>
+    <p>척척노트 앱의 <b>세금계산서 시작하기 → PC에서 등록하기</b>에 나온 8자리 코드를 넣어 주세요. 코드는 10분 동안 한 번만 쓸 수 있어요.</p>
+    <form id="f">
+      <label for="code">등록 코드</label>
+      <input id="code" name="code" maxlength="9" placeholder="XXXX-XXXX" autocomplete="off" autofocus>
+      <button type="submit">인증서 등록하러 가기</button>
+    </form>
+    <div class="msg" id="msg"></div>
+    <ol>
+      <li>버튼을 누르면 팝빌의 인증서 등록 화면이 열려요.</li>
+      <li>이 PC에 있는 <b>사업자 공동인증서</b>(전자세금용·범용)를 고르고 비밀번호를 넣어요.</li>
+      <li>등록이 끝나면 앱으로 돌아가 <b>등록 확인</b>을 눌러 주세요.</li>
+    </ol>
+  </div>
+  <footer>척척노트 · 세금계산서는 팝빌(링크허브)을 통해 국세청에 전송됩니다</footer>
+</main>
+<script>
+  var LINK = 'https://kkksibjfwirjgbfkrohq.supabase.co/functions/v1/tax-invoice-cert-link';
+  var MESSAGES = {
+    invalid: '코드 형식이 맞지 않아요. 앱에 나온 8자리를 다시 확인해 주세요.',
+    expired: '코드가 만료됐거나 이미 사용됐어요. 앱에서 새 코드를 받아 주세요.',
+    'no-business-number': '앱의 내 정보에 사업자등록번호를 먼저 입력해 주세요.',
+    popbill: '팝빌 화면을 열지 못했어요. 앱에서 팝빌 연결이 끝났는지 확인해 주세요.',
+    error: '잠시 문제가 생겼어요. 잠시 후 다시 시도해 주세요.',
+    'bad-request': '잘못된 접근이에요. 이 페이지에서 코드를 입력해 주세요.'
+  };
+  var result = new URLSearchParams(location.search).get('result');
+  if (result) { var m = document.getElementById('msg'); m.textContent = MESSAGES[result] || MESSAGES.error; m.style.display = 'block'; }
+  document.getElementById('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var code = document.getElementById('code').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    location.href = LINK + '?code=' + encodeURIComponent(code);
+  });
+</script>
+</body>
+</html>
