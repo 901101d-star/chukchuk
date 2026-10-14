@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>척척노트 이용약관</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#3182f6; --brand-deep:#1b64da;
+  --ink:#191f28; --muted:#4e5968; --faint:#8b95a1;
+  --bg:#eef2f7; --card:#ffffff; --line:#e5e8eb; --soft:#f4f7fb;
+  --shadow:0 1px 3px rgba(24,52,120,.05),0 12px 32px -12px rgba(24,52,120,.14);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --brand:#5a9bff; --brand-deep:#8bbaff;
+    --ink:#eaeef4; --muted:#aeb8c4; --faint:#7c8794;
+    --bg:#0c0f14; --card:#151a22; --line:#252c37; --soft:#1b212b;
+    --shadow:0 1px 3px rgba(0,0,0,.4),0 14px 34px -14px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --brand:#5a9bff; --brand-deep:#8bbaff;
+  --ink:#eaeef4; --muted:#aeb8c4; --faint:#7c8794;
+  --bg:#0c0f14; --card:#151a22; --line:#252c37; --soft:#1b212b;
+  --shadow:0 1px 3px rgba(0,0,0,.4),0 14px 34px -14px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Noto Sans KR',sans-serif;line-height:1.75;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 96px}
+header{padding:64px 0 34px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--soft);
+  border:1px solid var(--line);border-radius:999px;padding:7px 15px;
+  font-family:'Gothic A1';font-weight:700;font-size:13px;color:var(--brand)}
+.badge .d{width:7px;height:7px;border-radius:50%;background:var(--brand)}
+h1{font-family:'Gothic A1';font-weight:800;font-size:clamp(30px,6vw,40px);
+  letter-spacing:-1.5px;margin:20px 0 8px;line-height:1.2}
+.meta{color:var(--faint);font-size:14px;font-weight:500}
+.intro{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  box-shadow:var(--shadow);padding:22px 24px;margin-top:8px;color:var(--muted);font-size:15px}
+.intro b{color:var(--ink);font-weight:700}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 8px}
+.toc a{font-family:'Gothic A1';font-weight:700;font-size:13px;text-decoration:none;
+  color:var(--muted);background:var(--card);border:1px solid var(--line);
+  border-radius:10px;padding:8px 12px}
+.toc a:hover{color:var(--brand);border-color:var(--brand)}
+section{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  box-shadow:var(--shadow);padding:26px 22px 28px;margin-top:16px}
+h2{font-family:'Gothic A1';font-weight:800;font-size:20px;letter-spacing:-.6px;
+  margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 .n{font-size:14px;color:var(--brand);font-weight:800;min-width:24px}
+.lead{color:var(--faint);font-size:13.5px;margin:0 0 16px;padding-left:34px}
+.body{padding-left:34px}
+@media (max-width:520px){.lead,.body{padding-left:0}}
+p{margin:0 0 12px;color:var(--muted);font-size:15px}
+strong{color:var(--ink);font-weight:700}
+ul{margin:0 0 12px;padding-left:2px;list-style:none}
+li{position:relative;padding-left:18px;margin-bottom:9px;color:var(--muted);font-size:15px}
+li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;
+  border-radius:50%;background:var(--brand)}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:6px 0 14px;font-size:14px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'Gothic A1';font-weight:700;color:var(--ink);background:var(--soft);font-size:13px}
+td{color:var(--muted)}
+tr td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
+.note{background:var(--soft);border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--muted);margin-top:6px}
+a{color:var(--brand);font-weight:700}
+footer{text-align:center;color:var(--faint);font-size:13px;margin-top:34px;line-height:1.9}
+ol{margin:0 0 12px;padding-left:20px;color:var(--muted);font-size:15px}
+ol li{padding-left:4px}
+ol li::before{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge"><span class="d"></span>척척노트 · 현장 관리</span>
+    <h1>이용약관</h1>
+    <div class="meta">시행일 2026년 10월 14일 · 버전 1.0</div>
+  </header>
+
+  <div class="intro">
+    <b>척척노트</b>를 이용해 주셔서 감사합니다. 이 약관은 서비스 이용 조건과 회사·이용자의 권리와 의무를 정합니다.
+    개인정보 처리는 <a href="index.html">개인정보처리방침</a>을 따릅니다.
+  </div>
+
+  <nav class="toc">
+    <a href="#a1">제1조 목적</a>
+    <a href="#a2">제2조 정의</a>
+    <a href="#a3">제3조 약관의 효력과 변경</a>
+    <a href="#a4">제4조 서비스 내용</a>
+    <a href="#a5">제5조 전자세금계산서</a>
+    <a href="#a6">제6조 유료 구독</a>
+    <a href="#a7">제7조 이용자의 의무</a>
+    <a href="#a8">제8조 서비스 중단</a>
+    <a href="#a9">제9조 회원 탈퇴</a>
+    <a href="#a10">제10조 책임 제한</a>
+    <a href="#a11">제11조 분쟁 해결</a>
+  </nav>
+
+  <section id="a1">
+    <h2><span class="n">1</span>제1조(목적)</h2>
+    <div class="body">
+      <p>이 약관은 이음소프트(이하 “회사”)가 제공하는 척척노트(이하 “서비스”)의 이용 조건과 절차, 회사와 이용자의 권리·의무를 정합니다.</p>
+    </div>
+  </section>
+
+  <section id="a2">
+    <h2><span class="n">2</span>제2조(정의)</h2>
+    <div class="body">
+      <p>“이용자”는 이 약관에 동의하고 서비스를 이용하는 사업자 및 개인을 말합니다. “Pro”는 유료 구독으로 제공하는 추가 기능을 말합니다.</p>
+    </div>
+  </section>
+
+  <section id="a3">
+    <h2><span class="n">3</span>제3조(약관의 효력과 변경)</h2>
+    <div class="body">
+      <p>회사는 관련 법령을 위반하지 않는 범위에서 약관을 변경할 수 있으며, 변경 시 시행일 7일 전(이용자에게 불리한 경우 30일 전)부터 앱 또는 이 페이지에 공지합니다.</p>
+    </div>
+  </section>
+
+  <section id="a4">
+    <h2><span class="n">4</span>제4조(서비스 내용)</h2>
+    <div class="body">
+      <p>현장·일정 관리, 견적서 작성·전송, 장부·미수금 관리, 현장 사진 기록, 전자세금계산서 발행(Pro).</p>
+    </div>
+  </section>
+
+  <section id="a5">
+    <h2><span class="n">5</span>제5조(전자세금계산서)</h2>
+    <div class="body">
+      <ol><li>전자세금계산서는 <strong>주식회사 링크허브(팝빌)</strong>를 통해 작성·발행되어 국세청에 전송됩니다. 이용자는 이용을 위해 팝빌 회원가입 및 개인정보 제3자 제공에 동의하고, <strong>본인 명의의 공동인증서를 팝빌에 등록</strong>해야 합니다. (<a href="https://www.popbill.com/Policy/Agreement">팝빌 이용약관</a>)</li><li>세금계산서는 <strong>실제 거래에 대해서만</strong> 발행해야 하며, 발행 내용의 정확성과 세법상 책임은 발행하는 이용자에게 있습니다.</li><li>회사는 팝빌·국세청 시스템 장애, 공동인증서 만료 등 회사가 통제할 수 없는 사유로 인한 발행 지연·실패에 대해 책임지지 않습니다. 다만 회사의 고의·과실로 인한 손해는 그러하지 않습니다.</li><li>Pro 구독료에 매월 정해진 건수(현재 10건)의 발행이 포함됩니다. 팝빌 이용 수수료는 회사가 부담합니다.</li></ol>
+    </div>
+  </section>
+
+  <section id="a6">
+    <h2><span class="n">6</span>제6조(유료 구독)</h2>
+    <div class="body">
+      <ol><li>Pro는 App Store·Google Play의 자동 갱신 구독으로 판매하며, 결제·갱신·해지·환불은 각 스토어의 정책을 따릅니다.</li><li>현재 구독 기간이 끝나기 최소 24시간 전에 해지하지 않으면 자동 갱신됩니다.</li><li>월 발행 건수는 매월 초기화되며 남은 건수는 이월되지 않습니다.</li></ol>
+    </div>
+  </section>
+
+  <section id="a7">
+    <h2><span class="n">7</span>제7조(이용자의 의무)</h2>
+    <div class="body">
+      <p>이용자는 타인의 정보를 도용하거나 허위 정보를 입력해서는 안 되며, 법령과 이 약관을 지켜야 합니다.</p>
+    </div>
+  </section>
+
+  <section id="a8">
+    <h2><span class="n">8</span>제8조(서비스 중단)</h2>
+    <div class="body">
+      <p>시스템 점검·장애·천재지변 등의 경우 서비스 제공을 일시 중단할 수 있으며, 가능한 한 사전에 공지합니다.</p>
+    </div>
+  </section>
+
+  <section id="a9">
+    <h2><span class="n">9</span>제9조(회원 탈퇴)</h2>
+    <div class="body">
+      <p>이용자는 앱의 내 정보 → 회원 탈퇴에서 언제든 탈퇴할 수 있습니다. 법령상 보관 의무가 있는 기록은 해당 기간 동안 보관합니다. (<a href="delete-account.html">계정 삭제 안내</a>)</p>
+    </div>
+  </section>
+
+  <section id="a10">
+    <h2><span class="n">10</span>제10조(책임 제한)</h2>
+    <div class="body">
+      <p>회사는 이용자가 입력한 정보의 정확성, 이용자 간 또는 이용자와 제3자 간 거래에 대해 책임지지 않습니다.</p>
+    </div>
+  </section>
+
+  <section id="a11">
+    <h2><span class="n">11</span>제11조(분쟁 해결)</h2>
+    <div class="body">
+      <p>이 약관은 대한민국 법을 따르며, 분쟁은 민사소송법상 관할 법원에서 해결합니다.</p>
+    </div>
+  </section>
+
+  <section id="extra">
+    <h2><span class="n">·</span>부칙 및 사업자 정보</h2>
+    <div class="body">
+      <p>이 약관은 2026년 10월 14일부터 시행합니다.</p>
+      <ul>
+        <li>상호: <strong>이음소프트</strong> · 대표: <strong>엄재환</strong></li>
+        <li>사업자등록번호: 733-27-02143 · 통신판매업 신고번호: 2026-경기여주-00295</li>
+        <li>주소: 경기도 여주시 세종로 135, 104동 104호(홍문동, 삼한아파트)</li>
+        <li>문의: <strong>chukchukreview@gmail.com</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    이음소프트 · 대표 엄재환 · 문의 chukchukreview@gmail.com<br>
+    <a href="index.html">개인정보처리방침</a> · <a href="delete-account.html">계정 삭제 안내</a>
+  </footer>
+</div>
+</body>
+</html>
